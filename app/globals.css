@@ -17,13 +17,40 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #333;
+  background: #fff;
+}
+
+.border-gradient-custom-green {
+  position: relative;
+}
+
+.border-gradient-custom-green::before,
+.border-gradient-custom-green::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to right, #e0ea68 0%, #91c553 52%, #7cbb4d 66%, #48a240 100%);
+}
+
+.border-gradient-custom-green::before {
+  left: 0;
+}
+
+.border-gradient-custom-green::after {
+  right: 0;
+}
+
+.border-gradient-custom-green > * {
+  position: relative;
+  z-index: 1;
+}
+
+.custom-green-title{
+  background: linear-gradient(to right, #e0ea68 0%, #48a240 100%) left bottom #fff no-repeat;
+  background-size: 100% 3px;
 }
 
 @layer utilities {
